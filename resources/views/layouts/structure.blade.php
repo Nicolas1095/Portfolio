@@ -14,24 +14,30 @@
 
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    @production
+        <link rel="stylesheet" href="{{ secure_asset('css/AdminLTE.min.css') }}">
+    @endproduction
 </head>
 
 <body>
     <div class="alerts position-fixed">
         @if ($errors->any())
-            {!! implode('',$errors->all('
-                <div class="alert alert-danger alert-dismissible fade show">
-                    :message
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
-                    </button>
-                </div>'),
+            {!! implode(
+                '',
+                $errors->all('
+                            <div class="alert alert-danger alert-dismissible fade show">
+                                :message
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                </button>
+                            </div>'),
             ) !!}
         @endif
-        @if (session("status"))
-            <div class="alert alert-success alert-dismissible fade show">{{ session("status") }}<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
-            </button></div>
+        @if (session('status'))
+            <div class="alert alert-success alert-dismissible fade show">{{ session('status') }}<button type="button"
+                    class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+                </button></div>
         @endif
     </div>
     @yield('content')
