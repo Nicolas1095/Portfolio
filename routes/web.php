@@ -33,6 +33,6 @@ Route::post('skills/type', [SkillsTypes::class, "store"])->name("skills_types.st
 
 Route::post('sendMessages', [MessagesController::class, "store"])->name("sendMessages");
 
-Auth::routes();
+Auth::routes(["register" => false]);
 
 Route::get('home', [HomeController::class, "index"])->name('home');
