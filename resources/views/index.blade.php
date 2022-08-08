@@ -67,7 +67,7 @@
                         @endauth
                         @foreach ($certifications as $certification)
                             <div class="col-sm-10 col-md-5 col-lg-3 col-10 card p-3">
-                                <img class="img-fluid" src="{{ public_path(Storage::url($certification->img)) }}" alt="">
+                                <img class="img-fluid" src="{{ storage_path($certification->img) }}" alt="">
                                 <h4 class="text-secondary m-2">{{ __($certification->name) }}</h4>
                                 <span class="text-muted">{{ $certification->granted_by }}</span>
                                 @auth
@@ -118,7 +118,7 @@
                         @endauth
                         @foreach ($proyects as $proyect)
                             <div class="col-sm-10 col-md-5 col-lg-3 col-10 card p-2">
-                                <img class="img-fluid" src="{{ public_path(Storage::url($proyect->img)) }}" alt="">
+                                <img class="img-fluid" src="{{ storage_path($proyect->img) }}" alt="">
                                 <h4 class="text-secondary m-2">{{ __($proyect->name) }}</h4>
                                 <div class="buttons">
                                     <div class="row justify-content-center">
@@ -191,7 +191,7 @@
                                                     <button type="submit">Delete</button>
                                                 </form>
                                             @endauth
-                                            <img class="skill_img" src="{{ public_path(Storage::url($skill->img)) }}"
+                                            <img class="skill_img" src="{{ storage_path($skill->img) }}"
                                                 alt="{{ $skill->name }}">
                                             <span class="skill_name">{{ $skill->name }}</span>
                                         </div>
