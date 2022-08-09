@@ -13,8 +13,9 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Css -->
-    <link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     @production
+        <link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/AdminLTE.min.css') }}">
     @endproduction
 </head>
@@ -25,12 +26,12 @@
             {!! implode(
                 '',
                 $errors->all('
-                            <div class="alert alert-danger alert-dismissible fade show">
-                                :message
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
-                                </button>
-                            </div>'),
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            :message
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>'),
             ) !!}
         @endif
         @if (session('status'))

@@ -30,7 +30,7 @@
         </div>
         <a href="#about" class="btn btn_rounded text-light btn_presentation m-1"><?php echo e(__('About Me')); ?></a>
         <div class="presentation__background">
-            <video muted src="<?php echo e(asset('video/pexels-mikhail-nilov-7534244.mp4')); ?>" autoplay loop></video>
+            <video muted src="<?php echo e(secure_asset('video/pexels-mikhail-nilov-7534244.mp4')); ?>" autoplay loop></video>
             <div class="cover"></div>
         </div>
     </section>
@@ -67,7 +67,7 @@
                         <?php endif; ?>
                         <?php $__currentLoopData = $certifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $certification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-sm-10 col-md-5 col-lg-3 col-10 card p-3">
-                                <img class="img-fluid" src="<?php echo e(Storage::url($certification->img)); ?>" alt="">
+                                <img class="img-fluid" src="<?php echo e(secure_asset('storage/'.$certification->img)); ?>" alt="">
                                 <h4 class="text-secondary m-2"><?php echo e(__($certification->name)); ?></h4>
                                 <span class="text-muted"><?php echo e($certification->granted_by); ?></span>
                                 <?php if(auth()->guard()->check()): ?>
@@ -115,7 +115,7 @@
                         <?php endif; ?>
                         <?php $__currentLoopData = $proyects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $proyect): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-sm-10 col-md-5 col-lg-3 col-10 card p-2">
-                                <img class="img-fluid" src="<?php echo e(Storage::url($proyect->img)); ?>" alt="">
+                                <img class="img-fluid" src="<?php echo e(secure_asset('storage/'.$proyect->img)); ?>" alt="">
                                 <h4 class="text-secondary m-2"><?php echo e(__($proyect->name)); ?></h4>
                                 <div class="buttons">
                                     <div class="row justify-content-center">
@@ -188,7 +188,7 @@
                                                     <button type="submit">Delete</button>
                                                 </form>
                                             <?php endif; ?>
-                                            <img class="skill_img" src="<?php echo e(Storage::url($skill->img)); ?>"
+                                            <img class="skill_img" src="<?php echo e(secure_asset('storage/'.$skill->img)); ?>"
                                                 alt="<?php echo e($skill->name); ?>">
                                             <span class="skill_name"><?php echo e($skill->name); ?></span>
                                         </div>

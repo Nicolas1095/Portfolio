@@ -14,25 +14,32 @@
 
     <!-- Css -->
     <link rel="stylesheet" href="<?php echo e(asset('css/index.css')); ?>">
+    <?php if(app()->environment('production')): ?>
+        <link rel="stylesheet" href="<?php echo e(secure_asset('css/index.css')); ?>">
+        <link rel="stylesheet" href="<?php echo e(secure_asset('css/AdminLTE.min.css')); ?>">
+    <?php endif; ?>
 </head>
 
 <body>
     <div class="alerts position-fixed">
         <?php if($errors->any()): ?>
-            <?php echo implode('',$errors->all('
-                <div class="alert alert-danger alert-dismissible fade show">
-                    :message
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
-                    </button>
-                </div>'),
+            <?php echo implode(
+                '',
+                $errors->all('
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            :message
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>'),
             ); ?>
 
         <?php endif; ?>
-        <?php if(session("status")): ?>
-            <div class="alert alert-success alert-dismissible fade show"><?php echo e(session("status")); ?><button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
-            </button></div>
+        <?php if(session('status')): ?>
+            <div class="alert alert-success alert-dismissible fade show"><?php echo e(session('status')); ?><button type="button"
+                    class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+                </button></div>
         <?php endif; ?>
     </div>
     <?php echo $__env->yieldContent('content'); ?>
@@ -48,9 +55,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
-    <script src="<?php echo e(asset('js/minified/ScrollTrigger.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/minified/gsap.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/portfolio.js')); ?>"></script>
+    <script src="<?php echo e(secure_asset('js/minified/ScrollTrigger.min.js')); ?>"></script>
+    <script src="<?php echo e(secure_asset('js/minified/gsap.min.js')); ?>"></script>
+    <script src="<?php echo e(secure_asset('js/portfolio.js')); ?>"></script>
 </body>
 
 </html>
