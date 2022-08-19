@@ -31,7 +31,7 @@
         </div>
         <a href="#about" class="btn btn_rounded text-light btn_presentation m-1">{{ __('About Me') }}</a>
         <div class="presentation__background">
-            <video muted src="{{ secure_asset('video/pexels-mikhail-nilov-7534244.mp4') }}" autoplay loop></video>
+            <video muted src="{{ url('video/pexels-mikhail-nilov-7534244.mp4') }}" autoplay loop></video>
             <div class="cover"></div>
         </div>
     </section>
@@ -67,7 +67,7 @@
                         @endauth
                         @foreach ($certifications as $certification)
                             <div class="col-sm-10 col-md-5 col-lg-3 col-10 card p-3">
-                                <img class="img-fluid" src="{{ secure_asset('storage/'.$certification->img) }}" alt="">
+                                <img class="img-fluid" src="{{ url("storage/".$certification->img) }}" alt="">
                                 <h4 class="text-secondary m-2">{{ __($certification->name) }}</h4>
                                 <span class="text-muted">{{ $certification->granted_by }}</span>
                                 @auth
@@ -118,7 +118,7 @@
                         @endauth
                         @foreach ($proyects as $proyect)
                             <div class="col-sm-10 col-md-5 col-lg-3 col-10 card p-2">
-                                <img class="img-fluid" src="{{ secure_asset('storage/'.$proyect->img) }}" alt="">
+                                <img class="img-fluid" src="{{ url("storage/".$proyect->img) }}" alt="">
                                 <h4 class="text-secondary m-2">{{ __($proyect->name) }}</h4>
                                 <div class="buttons">
                                     <div class="row justify-content-center">
@@ -183,7 +183,7 @@
                             <div class="row align-items-center justify-content-center">
                                 @foreach ($skills as $skill)
                                     @if ($skill->type == $skills_types[$i]->type)
-                                        <div class="skill m-2 col-md-3 col-5">
+                                        <div class="skill m-1 col-md-3 col-5">
                                             @auth
                                                 <form action="{{ route('skills.delete', $skill->id) }}" method="POST">
                                                     @csrf
@@ -191,7 +191,7 @@
                                                     <button type="submit">Delete</button>
                                                 </form>
                                             @endauth
-                                            <img class="skill_img" src="{{ secure_asset('storage/'.$skill->img) }}"
+                                            <img class="skill_img" src="{{ url("storage/".$skill->img) }}"
                                                 alt="{{ $skill->name }}">
                                             <span class="skill_name">{{ $skill->name }}</span>
                                         </div>
