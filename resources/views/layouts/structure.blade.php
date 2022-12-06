@@ -15,7 +15,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     @production
-        <link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     @endproduction
 </head>
 
@@ -53,9 +53,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
-    <script src="{{ secure_asset('js/minified/ScrollTrigger.min.js') }}"></script>
-    <script src="{{ secure_asset('js/minified/gsap.min.js') }}"></script>
-    <script src="{{ secure_asset('js/portfolio.js') }}"></script>
+    <script src="{{ asset('js/minified/ScrollTrigger.min.js') }}"></script>
+    <script src="{{ asset('js/minified/gsap.min.js') }}"></script>
+    <script src="{{ asset('js/portfolio.js') }}"></script>
 </body>
 
 </html>

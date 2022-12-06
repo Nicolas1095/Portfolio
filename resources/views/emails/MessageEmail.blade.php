@@ -7,7 +7,7 @@
     <title>Message received</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Mensaje de: {{ $msg["name"] }}</h1>
     {{ $msg["message"] }}
 </body>
 </html>

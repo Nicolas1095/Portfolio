@@ -15,7 +15,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="<?php echo e(asset('css/index.css')); ?>">
     <?php if(app()->environment('production')): ?>
-        <link rel="stylesheet" href="<?php echo e(secure_asset('css/index.css')); ?>">
+        <link rel="stylesheet" href="<?php echo e(asset('css/index.css')); ?>">
     <?php endif; ?>
 </head>
 
@@ -54,9 +54,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
-    <script src="<?php echo e(secure_asset('js/minified/ScrollTrigger.min.js')); ?>"></script>
-    <script src="<?php echo e(secure_asset('js/minified/gsap.min.js')); ?>"></script>
-    <script src="<?php echo e(secure_asset('js/portfolio.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/minified/ScrollTrigger.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/minified/gsap.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/portfolio.js')); ?>"></script>
 </body>
 
 </html>
